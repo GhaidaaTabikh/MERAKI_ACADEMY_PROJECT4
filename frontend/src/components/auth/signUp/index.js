@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./register.css";
-import { Redirect } from "react-router-dom";
+
+import { Redirect , Route, useHistory } from "react-router-dom";
+
 
 import axios from "axios";
 
 export default function Register() {
+    const history = useHistory();
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +50,7 @@ export default function Register() {
             "some thing happened while register, please try again"
           );
         } else {
-          <Redirect to="/login" />;
+            history.push("/login");
         }
       })
       .catch((err) => {
