@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+
 import "./register.css";
 
-import { Redirect , Route, useHistory } from "react-router-dom";
-
+import { Route, useHistory } from "react-router-dom";
 
 import axios from "axios";
 
 export default function Register() {
-    const history = useHistory();
+  const history = useHistory();
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,13 +44,13 @@ export default function Register() {
         IBAN,
       })
       .then((res) => {
-        console.log(res.data);
+        
         if (res.data.errors) {
           setRegisterMessage(
             "some thing happened while register, please try again"
           );
         } else {
-            history.push("/login");
+          history.push("/login");
         }
       })
       .catch((err) => {
@@ -128,7 +128,3 @@ export default function Register() {
     </div>
   );
 }
-
-
-
-
