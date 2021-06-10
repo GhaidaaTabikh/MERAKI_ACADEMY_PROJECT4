@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <Navigation />
+        <Navigation token={token}/>
         <Route exact path="/" render={()=><Home setPath={setPath}/>} />
         <Route exact path="/login" render={()=><Login path={path} setToken={setToken} />} />
         <Route exact path="/register" component={Register}/>
