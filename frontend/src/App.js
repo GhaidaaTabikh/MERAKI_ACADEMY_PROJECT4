@@ -33,7 +33,7 @@ const App = () => {
         <Route
           exact
           path="/login"
-          render={() => <Login path={path} setToken={setToken} />}
+          render={() => <Login path={path} setToken={setToken}  />}
         />
         <Route exact path="/register" component={Register} />
         <Route
@@ -47,7 +47,7 @@ const App = () => {
         />
         <Route exact path="/cases/:id" />
         <Route exact path="/update" render={() => <Update token={token} />} />
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile" render={() => <Profile nickName={nickName} />} />
         <Route exact path="/AddNewCase"  component={AddNewCase} />
         {/* <Route exact path="/cases/create" component={AddNewCase} /> */}
       </div>
