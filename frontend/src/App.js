@@ -1,20 +1,27 @@
-import React,{useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import Navigation from "./components/navigation/index";
-import  Home  from "./components/home/index";
+import Home from "./components/home/index";
 import ClosedCases from "./components/closedCases/ClosedCases";
-import Login from './components/auth/login/index';
-import Register from './components/auth/register/index';
+import Login from "./components/auth/login/index";
+import Register from "./components/auth/register/index";
 // import AddNewCase from "./components/AddNewCase/index"
 import CaseSearch from "./components/cases_search";
-import Update from './components/case/updateCase'
+import Update from "./components/case/updateCase";
 
 const App = () => {
   const [path, setPath] = useState("");
   const [token, setToken] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) setToken(localStorage.getItem("token"));
+  }, []);
+
+  console.log("INSIDE APP: ", token);
   return (
     <>
       <div className="App">
+
         <Navigation token={token}/>
         <Route exact path="/" render={()=><Home setPath={setPath}/>} />
         <Route exact path="/login" render={()=><Login path={path} setToken={setToken} />} />
@@ -23,8 +30,8 @@ const App = () => {
 		    <Route path="/cases/categeories/:categeory" render={()=><CaseSearch setPath={setPath} />} />
         <Route exact path = "/cases/:id" />
         <Route exact path="/update" component={Update} setToken={setToken}/>
-        {/* <Route exact path="/cases/create" component={AddNewCase} /> */}
 
+        {/* <Route exact path="/cases/create" component={AddNewCase} /> */}
       </div>
     </>
   );
