@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
+import { Route , Switch } from "react-router-dom";
 import Navigation from "./components/navigation/index";
 import Home from "./components/home/index";
 import ClosedCases from "./components/closedCases/ClosedCases";
@@ -8,12 +8,13 @@ import Register from "./components/auth/register/index";
 // import AddNewCase from "./components/AddNewCase/index"
 import CaseSearch from "./components/cases_search";
 import Update from "./components/case/updateCase";
-import Header from './components/Header/header'
+import Header from './components/header/header'
 
 import CreditCardAdd from "./components/add_creditcard/index";
 import AddNewCase from "./components/AddNewCase/index";
 import Profile from "./components/Profile/index";
 import DonationConfirm from "./components/donation_confirmed/index"
+import NotFound from "./components/NotFound/index.js"
 
 const App = () => {
   const [path, setPath] = useState("");
@@ -35,6 +36,7 @@ const App = () => {
       <div className="App">
         <Header />
         <Navigation token={token} setToken={setToken} />
+        <Switch>
         <Route exact path="/" render={() => <Home setPath={setPath} />} />
         <Route
           exact
@@ -71,6 +73,8 @@ const App = () => {
           path="/cases/:id/donate"
           render={() => <CreditCardAdd token={token} />}
         />
+        <Route path="*" component={NotFound} />
+        </Switch>
       </div>
     </>
   );
