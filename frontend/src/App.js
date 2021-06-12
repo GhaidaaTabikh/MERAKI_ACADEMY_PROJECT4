@@ -9,9 +9,9 @@ import Register from "./components/auth/register/index";
 import CaseSearch from "./components/cases_search";
 import Update from './components/case/updateCase'
 import IsClose from './components/IsClose'
-import Update from "./components/case/updateCase";
+// import Update from "./components/case/updateCase";
 
-import Header from './components/Header/header'
+import Header from './components/header/header'
 
 
 

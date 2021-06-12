@@ -13,7 +13,7 @@ import building from "./building.png";
 import ContactUs from "../contactUs/index";
 import { useHistory, Link } from "react-router-dom";
 import Footer from "../footer/index";
-import {scroller} from "react-scroll";
+ import {scroller} from "react-scroll";
 
 const Home = ({setPath, homePageSection}) => {
 

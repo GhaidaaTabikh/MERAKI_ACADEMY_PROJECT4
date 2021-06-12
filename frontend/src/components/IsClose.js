@@ -39,7 +39,7 @@ export default function IsClose({ token }) {
                 <p>{"Address : " + elem.address}</p>
                 <p>{"is closed : " + elem.isClosed}</p>
                 <p></p>
-                <button onClick={() => update(elem._id)}>update</button>
+                <button className="upButton"  onClick={() => update(elem._id)}>update</button>
 
               </div>
             );

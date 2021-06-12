@@ -36,7 +36,7 @@ const Navigation = ({ token,setHomePageSection,setToken }) => {
         <Link to="/" className="links" onClick={()=>{
           setHomePageSection("volunteers")
         }}>
-          Our Volunteers
+          Our team
         </Link>
         <Link to="/" className="links" onClick={()=>{
           setHomePageSection("container")
@@ -54,7 +54,7 @@ const Navigation = ({ token,setHomePageSection,setToken }) => {
       </Link>
       <Link to="/update" className="links logreg">my cases</Link></div>
       ) : (
-        <div className="signing">
+        <div className="signingg">
           <Link to="/login" className="links logreg">
             Login
           </Link>
@@ -62,7 +62,7 @@ const Navigation = ({ token,setHomePageSection,setToken }) => {
             Register
           </Link>
           <Link to="/isClose" className="dropDownLinks">
-          is Close
+         Close cases
           </Link>
         </div>
       )}
